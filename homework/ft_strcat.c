@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 18:37:00 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/22 12:36:14 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/22 12:58:15 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/02/22 13:36:56 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_str.h"
 
-char *ft_strcpy(char *dst, const char *src)
+char *ft_strcat(char *s1, const char *s2)
 {
-	char *d;
-
-	*d = dst;
-	while (*src)
-		*d++ = *src++;
-	*d = '\0';
-	return (dst);
+	ft_strcpy(&s1[ft_strlen(s1)], s2);
+	return (s1);
 }
