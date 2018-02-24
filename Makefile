@@ -20,12 +20,14 @@ CTYPE_FILES +=	ft_isupper	ft_islower	ft_isalpha	ft_isspace	\
 CTYPE_FILES := $(addprefix $(CTYPE_DIR)/,$(CTYPE_FILES))
 CTYPE_BIN := $(addsuffix .o,$(CTYPE_FILES))
 
-STR_FILES +=	ft_strlen	ft_strcmp
+STR_FILES +=	ft_strlen	ft_strcpy	ft_strncpy	ft_strcat	\
+				ft_strncat	ft_strdup	ft_strndup	ft_strchr	\
+				ft_strcmp	ft_strncmp
 STR_FILES := $(addprefix $(STR_DIR)/,$(STR_FILES))
 STR_BIN := $(addsuffix .o,$(STR_FILES))
 
 MEM_FILES +=	ft_memset		ft_bzero	ft_memcpy	ft_memccpy	\
-				ft_memcpy_bwd	ft_memmove	ft_memcmp
+				ft_memcpy_bwd	ft_memmove	ft_memcmp	ft_memchr
 MEM_FILES := $(addprefix $(MEM_DIR)/,$(MEM_FILES))
 MEM_BIN := $(addsuffix .o,$(MEM_FILES))
 
