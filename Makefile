@@ -6,6 +6,17 @@ FLAGS := -Wall -Wextra -Werror
 SRC_DIR := srcs
 BIN_DIR := objs
 
+# Test Vars
+ALL_INCLUDES = -include assert.h -include string.h -include stdio.h -include ctype.h
+T_NAME := utest
+T_DIR := tests
+T_FILES +=	ctype_test
+T_OBJS := $(addsuffix .o,$(T_FILES))
+T_FILES := $(addsuffix .c,$(T_FILES))
+T_FILES := $(addprefix $(T_DIR)/,$(T_FILES))
+
+
+
 # File Subdirectories
 CTYPE_DIR := ft_ctype
 STR_DIR := ft_str
@@ -22,7 +33,7 @@ CTYPE_BIN := $(addsuffix .o,$(CTYPE_FILES))
 
 STR_FILES +=	ft_strlen	ft_strcpy	ft_strncpy	ft_strcat	\
 				ft_strncat	ft_strdup	ft_strndup	ft_strchr	\
-				ft_strcmp	ft_strncmp
+				ft_strcmp	ft_strncmp	ft_strstr
 STR_FILES := $(addprefix $(STR_DIR)/,$(STR_FILES))
 STR_BIN := $(addsuffix .o,$(STR_FILES))
 
@@ -59,12 +70,21 @@ $(OBJS): | $(BIN_DIR)
 $(BIN_DIR):
 	@mkdir -p $(addprefix $(BIN_DIR)/,$(CTYPE_DIR) $(STR_DIR) $(MEM_DIR) $(STDLIB_DIR))
 
+# Testing
+
+test: all
+	@echo "\033[35m[ Testing ]\033[0m"
+	@$(CC) $(FLAGS) -c -I $(INC) $(ALL_INCLUDES) $(T_FILES)
+	@$(CC) -L. -lft $(T_OBJS) -o $(T_NAME) && ./$(T_NAME)
+	@echo "\n\033[35m[ Test Complete ]\033[0m"
+
 clean:
 	@/bin/rm -rf $(BIN_DIR)
+	@/bin/rm -f $(T_OBJS)
 	@echo "\033[31m[object files deleted]\033[0m"
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME) $(T_NAME)
 	@echo "\033[31m[executable $(NAME) deleted]\033[0m"
 
 re: fclean all

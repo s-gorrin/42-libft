@@ -6,13 +6,13 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 18:37:00 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/23 14:45:42 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/02/24 22:49:31 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_str.h"
 
-char *ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	char *d;
 

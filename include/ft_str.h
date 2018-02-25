@@ -6,7 +6,7 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 17:31:37 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/23 14:35:50 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/02/24 19:11:33 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
+char	*ft_strstr(const char *haystack, const char *needle);
 
 #endif
