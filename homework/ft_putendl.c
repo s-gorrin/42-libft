@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 17:11:43 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/22 02:01:49 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/26 17:47:09 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/02/26 17:47:13 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_mem.h"
+#include "ft_put.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	ft_putendl(char const *s)
 {
-	unsigned char *u;
-
-	u = (unsigned char *)s;
-	if (n)
-	{
-		while (n--)
-		{
-			if (*u == (unsigned char)c)
-				return ((void*)u);
-			u++;
-		}
-	}
-	return (0);
+	while (*s++)
+		ft_putchar(*s);
+	write(1, '\n', 1);
 }

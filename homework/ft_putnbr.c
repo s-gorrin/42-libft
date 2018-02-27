@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 18:37:00 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/22 12:41:06 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/26 17:47:20 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/02/26 17:51:45 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_put.h"
 
-char *ft_strncpy(char *dst, const char *src, size_t len)
+void	ft_putnbr(int n)
 {
-	char *d;
-	const char *s;
+	int num[10];
+	int index;
 
-	*d = dst;
-	*s = src;
-	while (len--)
+	index = 0;
+	if (n == 0)
+		ft_putchar('0');
+	if (n < 0)
+		ft_putchar('-');
+	while (n != 0)
 	{
-		if (*s)
-			*d++ = *s++;
-		else
-			*d++ = '\0';
+		num[index] = n % 10;
+		index++;
+		n /= 10;
 	}
-	*d = '\0';
-	return (dst);
+	while (index > 0)
+	{
+		index--;
+		if (num[index] < 0)
+			num[index] *= -1;
+		ft_putchar(num[index] + '0');
+	}
 }

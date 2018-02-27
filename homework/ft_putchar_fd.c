@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 18:37:00 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/22 12:36:14 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/26 17:46:56 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/02/26 17:46:59 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_put.h"
 
-char *ft_strcpy(char *dst, const char *src)
+void	ft_putchar_fd(char c, int fd)
 {
-	char *d;
-
-	*d = dst;
-	while (*src)
-		*d++ = *src++;
-	*d = '\0';
-	return (dst);
+	write(fd, &c, 1);
 }

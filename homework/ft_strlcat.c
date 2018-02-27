@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 14:46:19 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/22 15:00:15 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/26 17:47:41 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/02/26 17:47:44 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_str.h"
 
-char *ft_strchr(const char *s, int c)
+size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 {
-	if (c == 0)
-		return (s[ft_strlen(s)]);
-	while (s++ != (char)c)
+	char *d;
+	const char *s;
+	size_t n;
+	size_t dlen;
+
+	d = dst;
+	s = src;
+	n = siz;
+	while (n-- != 0 && *d++ != '\0')
 		;
-	if (*s)
-		return (*s);
-	else
-		return (NULL);
+	dlen = d - dst;
+	n = siz - dlen;
+	if (n == 0)
+		return (dlen + ft_strlen(s));
+	while (*s++ != '\0')
+		if (n-- != 1)
+			*d++ = *s;
+	*d = '\0';
+	return (dlen + (s - src));
 }

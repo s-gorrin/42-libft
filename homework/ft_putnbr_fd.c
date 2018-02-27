@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 17:29:34 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/22 02:02:44 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/26 17:50:29 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/02/26 17:50:47 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_put.h"
 
-char *ft_strndup(const char *s1, size_t n)
+void	ft_putnbr_fd(int n)
 {
-	char *dst;
+	int num[10];
+	int index;
 
-	dst = (char *)malloc(sizeof(*s1) * n);
-	if (dst == '\0')
-		return (NULL);
-	while (*s1 && n--)
-		*dst++ = *s1++;
-	*dst = '\0';
-	return (dst);
+	index = 0;
+	if (n == 0)
+		ft_putchar_fd('0');
+	if (n < 0)
+		ft_putchar_fd('-');
+	while (n != 0)
+	{
+		num[index] = n % 10;
+		index++;
+		n /= 10;
+	}
+	while (index > 0)
+	{
+		index--;
+		if (num[index] < 0)
+			num[index] *= -1;
+		ft_putchar_fd(num[index] + '0');
+	}
 }
