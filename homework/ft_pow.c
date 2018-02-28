@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/26 17:47:20 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/27 16:00:54 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/26 22:58:55 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/02/27 00:50:51 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+** Haha nevermind, this only works of integers.
+*/
 
-void	ft_putnbr(int n)
+double	ft_pow(double x, double y)
 {
-	int num[10];
-	int index;
+	double n;
 
-	index = 0;
-	if (n == 0)
-		ft_putchar('0');
-	if (n < 0)
-		ft_putchar('-');
-	while (n != 0)
+	n = x;
+	if (y == 0)
 	{
-		num[index] = n % 10;
-		index++;
-		n /= 10;
+		if (x < 0)
+			return (-1);
+		else
+			return (1);
 	}
-	while (index > 0)
+	if (y >= 1)
+		while (y-- > 1)
+			n = (n * x);
+	else
 	{
-		index--;
-		if (num[index] < 0)
-			num[index] *= -1;
-		ft_putchar(num[index] + '0');
+		if (n == 0)
+			return (NULL);
+		y = (y * -1);
+		while (y-- > 1)
+			n = (n / y);
 	}
+	return (n);
 }

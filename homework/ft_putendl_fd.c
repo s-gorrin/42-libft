@@ -6,11 +6,11 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 17:55:00 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/26 17:55:06 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/02/27 16:00:45 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "libft.h"
 
 void	ft_putendl_fd(char const *s)
 {

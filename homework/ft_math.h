@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/26 17:47:20 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/27 16:00:54 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/26 23:15:01 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/02/26 23:16:07 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_MATH_H
+# define FT_MATH_H
 
-void	ft_putnbr(int n)
-{
-	int num[10];
-	int index;
+double	ft_pow(double x, double y);
 
-	index = 0;
-	if (n == 0)
-		ft_putchar('0');
-	if (n < 0)
-		ft_putchar('-');
-	while (n != 0)
-	{
-		num[index] = n % 10;
-		index++;
-		n /= 10;
-	}
-	while (index > 0)
-	{
-		index--;
-		if (num[index] < 0)
-			num[index] *= -1;
-		ft_putchar(num[index] + '0');
-	}
-}
+#endif

@@ -6,11 +6,11 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 17:47:34 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/26 17:47:36 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/02/27 16:01:28 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_put.h"
+#include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {
