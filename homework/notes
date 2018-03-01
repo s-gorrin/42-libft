@@ -4,5 +4,7 @@ I think strchr has issues...
 
 add ft_put.h to libft.h
 
+change ft_strcmp to something that makes sense
+
 change all functions headers to libft.h, make sure libft.h contains all necessary includes
 NULL is in sys/types.h`
