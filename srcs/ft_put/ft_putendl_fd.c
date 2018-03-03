@@ -6,7 +6,7 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 17:55:00 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/27 16:00:45 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/03/02 12:40:11 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_putendl_fd(char const *s)
 {
-	while (*s++)
-		ft_putchar_fd(*s);
+	write(fd, s, ft_strlen(s));
 	write(fd, '\n', 1);
 }

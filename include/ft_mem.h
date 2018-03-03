@@ -6,13 +6,14 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 17:28:34 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/23 14:34:35 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/03/02 23:14:35 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MEM_H
 # define FT_MEM_H
 # include <string.h>
+# include <stdlib.h>
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);

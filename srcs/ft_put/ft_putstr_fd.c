@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/27 16:59:36 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/27 17:02:41 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/26 17:47:34 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/03/02 12:41:34 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+#include "libft.h"
+
+void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s1++ == *s2++ && *s1 && n--)
-		;
-	if (*s1 == *s2)
-		return (1);
-	else
-		return (0);
+	write(fd, s, ft_strlen(s));
 }

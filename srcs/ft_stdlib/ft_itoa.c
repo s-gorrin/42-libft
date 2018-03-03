@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/26 17:47:50 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/27 16:02:14 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/03/01 16:55:07 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/03/02 22:37:45 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_itoa(int n)
 {
-	size_t n_len;
+	char	*num;
 
-	n_len = ft_strlen(needle);
-	if (needle == 0)
-		return ((char *)haystack);
-	while (*haystack)
+	if (!(num = (char *)malloc(sizeof(char) * 10)))
+		return (NULL);
+	if (n == 0)
+		return ((num = "0"));
+	if (n == -2147483648)
+		return ((num = "-2147483648"));
+	if (n < 0)
 	{
-		if (*haystack++ == *needle)
-		{
-			if (len < n_len)
-				if (!ft_strncmp(haystack, needle, len))
-					return ((char *)haystack);
-			else if (len > n_len)
-				if (!ft_strncmp(haystack, needle, n_len))
-					return ((char *)haystack);
-		}
+		*num++ = '-';
+		n *= -1;
 	}
-	return (NULL);
+	while (n != 0)
+	{
+		*num++ = (n % 10) + '0';
+		n /= 10;
+	}
+	*num = '\0';
+	return (num);
 }

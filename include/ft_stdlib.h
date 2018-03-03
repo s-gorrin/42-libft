@@ -6,7 +6,7 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 17:34:38 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/20 17:35:49 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/03/02 22:23:47 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_STDLIB_H
 # include "ft_ctype.h"
 
-int	ft_atoi(char *str);
+int		ft_atoi(char *str);
+char	*ft_itoa(int n);
 
 #endif

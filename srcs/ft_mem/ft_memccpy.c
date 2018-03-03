@@ -6,11 +6,11 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 18:29:39 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/20 20:15:02 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/03/02 23:09:13 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_mem.h"
+#include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

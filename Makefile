@@ -22,6 +22,7 @@ CTYPE_DIR := ft_ctype
 STR_DIR := ft_str
 MEM_DIR := ft_mem
 STDLIB_DIR := ft_stdlib
+PUT_DIR := ft_put
 
 # File Names
 CTYPE_FILES +=	ft_isupper	ft_islower	ft_isalpha	ft_isspace	\
@@ -33,20 +34,30 @@ CTYPE_BIN := $(addsuffix .o,$(CTYPE_FILES))
 
 STR_FILES +=	ft_strlen	ft_strcpy	ft_strncpy	ft_strcat	\
 				ft_strncat	ft_strdup	ft_strndup	ft_strchr	\
-				ft_strcmp	ft_strncmp	ft_strstr
+				ft_strcmp	ft_strncmp	ft_strstr	ft_strclr	\
+				ft_strdel	ft_strequ	ft_striter	ft_striteri	\
+				ft_strjoin	ft_strlcat	ft_strmap	ft_strmapi	\
+				ft_strnequ	ft_strnew	ft_strnstr	ft_strrchr	\
+				ft_strsplit	ft_strsub	ft_strtrim
 STR_FILES := $(addprefix $(STR_DIR)/,$(STR_FILES))
 STR_BIN := $(addsuffix .o,$(STR_FILES))
 
 MEM_FILES +=	ft_memset		ft_bzero	ft_memcpy	ft_memccpy	\
-				ft_memcpy_bwd	ft_memmove	ft_memcmp	ft_memchr
+				ft_memcpy_bwd	ft_memmove	ft_memcmp	ft_memchr	\
+				ft_memalloc		ft_memdel
 MEM_FILES := $(addprefix $(MEM_DIR)/,$(MEM_FILES))
 MEM_BIN := $(addsuffix .o,$(MEM_FILES))
 
-STDLIB_FILES +=	ft_atoi
+STDLIB_FILES +=	ft_atoi		ft_itoa
 STDLIB_FILES := $(addprefix $(STDLIB_DIR)/,$(STDLIB_FILES))
 STDLIB_BIN := $(addsuffix .o,$(STDLIB_FILES))
 
-OBJS := $(addprefix $(BIN_DIR)/,$(CTYPE_BIN) $(STR_BIN) $(MEM_BIN) $(STDLIB_BIN))
+PUT_FILES +=	ft_putchar		ft_putstr		ft_putendl		ft_putnbr		\
+				ft_putchar_fd	ft_putstr_fd	ft_putendl_fd	ft_putnbr_fd
+PUT_FILES := $(addprefix $(PUT_DIR)/,$(PUT_FILES))
+PUT_BIN := $(addsuffix .o,$(PUT_FILES))
+
+OBJS := $(addprefix $(BIN_DIR)/,$(CTYPE_BIN) $(STR_BIN) $(MEM_BIN) $(STDLIB_BIN) $(PIT_BIN))
 
 INC := include
 
@@ -68,7 +79,7 @@ $(NAME): $(OBJS)
 $(OBJS): | $(BIN_DIR)
 
 $(BIN_DIR):
-	@mkdir -p $(addprefix $(BIN_DIR)/,$(CTYPE_DIR) $(STR_DIR) $(MEM_DIR) $(STDLIB_DIR))
+	@mkdir -p $(addprefix $(BIN_DIR)/,$(CTYPE_DIR) $(STR_DIR) $(MEM_DIR) $(STDLIB_DIR) $(PUT_DIR))
 
 # Testing
 

@@ -6,11 +6,11 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 19:44:47 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/20 19:47:22 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/03/02 23:09:13 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_mem.h"
+#include "libft.h"
 
 void	*ft_memcpy_bwd(void *s1, const void *s2, size_t n)
 {

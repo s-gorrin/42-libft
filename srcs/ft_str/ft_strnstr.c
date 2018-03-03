@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/28 20:00:27 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/03/01 16:54:39 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/26 17:47:50 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/03/02 23:22:27 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	n;
-	char	**check;
-	char	**r;
+	size_t n_len;
 
-	check = s;
-	n = 0;
-	if (!(r = (char**)malloc(sizeof(*s))))
-		return (NULL);
-	while (*s)
+	n_len = ft_strlen(needle);
+	if (needle == 0)
+		return ((char *)haystack);
+	while (*haystack)
 	{
-		if (*s == c)
+		if (*haystack++ == *needle)
 		{
-			while (*s == c)
-				*s++;
-			if (!*s)
-				n = 1;
-			if (s == check && n++ < 1 && *r++)
-				**r = '\0';
+			if (len < n_len)
+			{
+				if (!ft_strncmp(haystack, needle, len))
+					return ((char *)haystack);
+			}
+			else if (len > n_len)
+			{
+				if (!ft_strncmp(haystack, needle, n_len))
+					return ((char *)haystack);
+			}
 		}
-		n = 0;
-		*s++ = **r++;
 	}
-	**r = '\0';
-	return (**r);
+	return (NULL);
 }

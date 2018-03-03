@@ -1,47 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/27 23:59:55 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/02/28 00:37:47 by sgorrin          ###   ########.fr       */
+/*   Created: 2018/02/27 16:59:36 by sgorrin           #+#    #+#             */
+/*   Updated: 2018/03/02 23:18:58 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace_trim(char c)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	if (c == '\t' || c == '\n' || c == ' ')
+	while (*s1++ == *s2++ && *s1 && n--)
+		;
+	if (*s1 == *s2)
 		return (1);
 	else
 		return (0);
-}
-
-char	*ft_strtrim(char const *s)
-{
-	char	*b
-	char	*r;
-	int	n;
-	int	e;
-
-	n = 0;
-	e = 0;
-	while (ft_isspace_trim(*b++))
-		n++;
-	if (!b*)
-		return (NULL);
-	while (*b++)
-		;
-	while (ft_isspace_trim(*b--))
-		e++;
-	r = (char *)malloc(sizeof(*b) - (e + n));
-	while (n--)
-		*s++;
-	while (!ft_isspace_trim(*s))
-		*r++ = *s++;
-	*s = '\0';
-	return (s);
 }
