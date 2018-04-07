@@ -17,6 +17,7 @@ FILES +=	ft_isupper	ft_islower	ft_isalpha	ft_isspace	\
 		ft_strequ	ft_strnequ	ft_striter	ft_striteri	\
 		ft_strjoin	ft_strmap	ft_strmapi	ft_strnew	\
 		ft_strsplit	ft_strsub	ft_strtrim	ft_strlcpy	\
+		ft_strnjoin	\
 		ft_memset	ft_bzero	ft_memcpy	ft_memccpy	\
 		ft_memcpy_bwd	ft_memmove	ft_memcmp	ft_memchr	\
 		ft_memalloc	ft_memdel	\

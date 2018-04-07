@@ -6,7 +6,7 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 16:48:03 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/04/06 16:55:26 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/04/06 17:05:35 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnjoin(char const *s1, char const *s2, size_t n)
 	save = r;
 	while (*s1)
 		*r++ = *s1++;
-	while (*s2 && lens2 > 0;)
+	while (*s2 && lens2 > 0)
 	{
 		*r++ = *s2++;
 		lens2--;
