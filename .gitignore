@@ -3,7 +3,6 @@
 *.obj
 *.ko
 *.elf
-/objs
 
 # Unnamed executables
 a.out
