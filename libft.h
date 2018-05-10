@@ -6,7 +6,7 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/20 17:28:03 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/04/19 21:44:09 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/05/10 16:10:48 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,10 @@ void				ft_memdel(void **ap);
 
 int					ft_atoi(char *str);
 char				*ft_itoa(int n);
+char				*ft_itoa_base(int n, size_t base);
+char				*ft_ltoa(long n);
+char				*ft_ltoa_base(long n, size_t base);
+char				*ft_ultoa(unsigned long n);
 int					ft_abs(int x);
 int					ft_numlen(int n);
 int					ft_is_prime(int nb);

@@ -6,11 +6,11 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/07 19:42:59 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/05/07 21:46:08 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/05/10 16:11:56 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
 char	*ft_ltoa_base(long n, size_t base)
 {

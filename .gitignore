@@ -16,3 +16,4 @@ a.out
 # Intentional ignores
 *.ignore
 ignore*
+libft.a

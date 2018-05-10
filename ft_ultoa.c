@@ -6,7 +6,7 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/07 18:56:03 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/05/07 21:52:22 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/05/10 16:12:31 by sgorrin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_ultoa(unsigned long n)
 
 	if (n == 0)
 		return (ft_strdup("0"));
-	len = n < 0 ? 2 : 1;
+	len = 1;
 	n2 = n;
 	while ((n2 /= 10))
 		len++;
