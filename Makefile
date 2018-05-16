@@ -24,6 +24,7 @@ FILES +=	ft_isupper	ft_islower	ft_isalpha	ft_isspace	\
 		ft_atoi		ft_itoa		ft_itoa_base	ft_ltoa	\
 		ft_ltoa_base	ft_ultoa	ft_abs		ft_numlen	\
 		ft_is_prime	ft_sqrt_cl	ft_arrlen	\
+		get_next_line	\
 		ft_putchar	ft_putstr	ft_putendl	ft_putnbr	\
 		ft_putchar_fd	ft_putstr_fd	ft_putendl_fd	ft_putnbr_fd	\
 		ft_lstnew	ft_lstdelone	ft_lstdel	ft_lstadd	\
