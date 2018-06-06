@@ -6,11 +6,19 @@
 /*   By: sgorrin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/04 14:18:07 by sgorrin           #+#    #+#             */
-/*   Updated: 2018/05/15 19:48:34 by sgorrin          ###   ########.fr       */
+/*   Updated: 2018/06/05 17:04:19 by snake            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** reads a file line by line, writing input line.
+** returns the following values:
+** return 1 when it read a line
+** return 0 when it finished reading a file
+** return -1 when an error occurs
+*/
 
 static int	crane(char **storage, char **line, size_t i, char **temp)
 {
